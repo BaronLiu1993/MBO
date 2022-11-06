@@ -1,0 +1,293 @@
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family: "League Spartan",sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+body{
+    background-color: #648cc3;
+    overflow-x: hidden;
+}
+
+
+/* Navbar */
+.navbar li, .navbar a, button{
+    font-size: 16px;
+    color: #e5ecf7;
+    font-weight: 500;
+}
+
+#active{
+    color: #FFF;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0rem .2rem;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    padding: 5px .5rem;
+    border-radius: .5rem;
+}
+
+.nav_links li a:hover{
+    color: #FFF;
+    font-size: 18px;
+    background-color: rgba(210, 213, 234, 0.3);
+}
+
+button{
+    padding: 0.6em 1em; 
+    border-radius: 5rem;
+    border-width: .1em;
+    border-style: solid;
+    border-color: #FFF;
+    transition: all 0.3s ease 0s;
+    color: #FFF;
+    background-color: transparent;
+}
+
+button:hover{
+    color: #648cc3;
+    border-color:#e5ecf7;
+    background-color: #e5ecf7;
+    cursor:pointer;
+}
+
+.logo img{
+    width: 4rem;
+}
+
+
+
+/*------------------ hamburger menu stuff --------------------*/
+.hamburger_menu{
+    position: relative;
+    display: none;
+    width: 35px;
+    cursor: pointer;
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    z-index: 95;
+    margin-right: 4%;
+}
+
+.hamburger_menu .bar, .hamburger_menu:before, .hamburger_menu:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #FFF;
+    margin: 6px 0px;
+    transition: 0.3s;
+}
+
+.hamburger_menu.is-active:before{
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+.hamburger_menu.is-active .bar{
+    opacity: 0;
+}
+.hamburger_menu.is-active:after{
+    transform: rotate(45deg) translate(-8px, -6px);
+}
+
+.mobile-nav{    
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    z-index: 90;
+    background-color: #648cc3;
+    padding-top: 120px;
+    transition: 0.3s
+}
+
+.mobile-nav a{
+    display: block;
+    width: 100%;
+    max-width:200px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background-color: #e5ecf741;
+    margin: 0 auto 16px;
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.mobile-nav a:hover{
+    background-color: #e5ecf774;
+}
+
+.mobile-nav.is-active{
+    left: 0;
+}
+
+
+
+
+@media(max-width: 890px){
+    .hamburger_menu{
+        display: block;
+    }
+
+    .nav_links{
+        display: none;
+    }
+}
+
+
+
+
+/*-----------------LANDING ---------------*/
+
+.title{
+    font-size: 25vw;
+    font-weight: 800;
+    z-index: 10;
+    font-family: 'Times New Roman', Times, serif;
+    color: #FFF;
+    position: absolute;
+    top: 175px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    border-width: 5px;
+    border-style: solid;
+    border-color: #FFF;
+    margin: 0 5%;
+
+}
+
+.title-bg{
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+/*----------- CONTENT -------------------*/
+
+
+
+.content{
+    background-color: #FFF;
+    padding: 5% 0;
+}
+
+.subtitle{
+    color: #FFF;
+    font-size: 75px;
+    margin: 10% 0 5%;
+    padding: 35px 0 25px;
+    display: flex;
+    justify-content: center;
+    background-color: #648cc3;
+
+}
+
+.images{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+    padding: 0 7%;
+}
+
+.images img{
+    width: 100%;
+}
+
+.span2{
+    grid-column: span 2;
+}
+
+
+@media(max-width:700px){
+    .title-bg{
+        height: 75vw;
+    }
+
+    .title{
+        margin-top: 3vw;
+    }
+
+    .subtitle{
+        font-size: 8vw;
+        margin-top: 15%;
+    }
+}
+
+@media(max-width: 500px){
+    .images{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 5% 10%;
+        gap: 5vw;
+    }
+
+    .span2{
+        grid-column: span 1;
+    }
+}
+
+
+/*------------- FOOTER --------------*/
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 5%;
+}
+
+.footer img{
+    width: 60px;
+    padding: 0 .5rem;
+}
+
+.socials img{
+    filter: opacity(70%);
+    transition: all .3s ease 0s;
+}
+
+.socials img:hover{
+    filter: opacity(100%);
+}
+
+hr{
+    color:#FFF;
+	background:#fff;
+	height:2px;
+	border:none
+}
